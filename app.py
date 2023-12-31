@@ -191,9 +191,9 @@ def predict(
                 None,
                 None,
             )
-        if len(prompt) > 200:
+        if len(prompt) > 2500:
             gr.Warning(
-                "Text length limited to 200 characters for this demo, please try shorter text. You can clone this space and edit code for your own usage"
+                "Text length limited to 2500 characters for this demo, please try shorter text. You can clone this space and edit code for your own usage"
             )
             return (
                 None,
@@ -639,7 +639,7 @@ with gr.Blocks(analytics_enabled=False) as demo:
                     "hi"
                 ],
                 max_choices=1,
-                value="en",
+                value="pl",
             )
             ref_gr = gr.Audio(
                 label="Reference Audio",
@@ -665,7 +665,7 @@ with gr.Blocks(analytics_enabled=False) as demo:
             )
             auto_det_lang_gr = gr.Checkbox(
                 label="Do not use language auto-detect",
-                value=False,
+                value=True,
                 info="Check to disable language auto-detection",
             )
             tos_gr = gr.Checkbox(
